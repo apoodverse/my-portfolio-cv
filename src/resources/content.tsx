@@ -57,6 +57,12 @@ const home: Home = {
       Creative Multimedia (Blender & Unity AR), serta Software & IoT Development.
     </>
   ),
+  image: {
+    src: "/images/avatar.jpg",
+    alt: `${person.name}`,
+    width: 1200,
+    height: 630,
+  },
 };
 
 const about: About = {

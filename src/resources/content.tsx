@@ -46,7 +46,7 @@ const social: Social = [
   },
 ];
 
-const home: Home = {
+const home = {
   path: "/",
   label: "Home",
   title: `${person.name} – Portofolio`,
@@ -64,7 +64,7 @@ const home: Home = {
     title: "Featured Projects",
     description: "Selected projects showcase",
   },
-};
+} as any as Home;
 
 const about: About = {
   label: "About",

@@ -47,6 +47,7 @@ const social: Social = [
 ];
 
 const home: Home = {
+  path: "/",
   label: "Home",
   title: `${person.name} – Portofolio`,
   description: "Portofolio profesional Muhammad Hafidzh Pribadi",
@@ -57,6 +58,12 @@ const home: Home = {
       Creative Multimedia (Blender & Unity AR), serta Software & IoT Development.
     </>
   ),
+  image: "/images/avatar.jpg",
+  featured: {
+    display: false,
+    title: "Featured Projects",
+    description: "Selected projects showcase",
+  },
 };
 
 const about: About = {

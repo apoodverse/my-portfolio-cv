@@ -4,22 +4,25 @@ import { Line, Row, Text } from "@once-ui-system/core";
 const person: Person = {
   firstName: "Muhammad",
   lastName: "Hafidzh",
-  name: "Muhammad Hafidzh Pribadi",
+  name: `Muhammad Hafidzh Pribadi`,
   role: "UI/UX Designer & Software Engineer",
   avatar: "/images/avatar.jpg",
   email: "mhmhafidzz@gmail.com",
-  location: "Asia/Jakarta",
-  languages: ["Indonesian", "English", "Arabic"],
-  locale: "id",
+  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["Indonesian", "English", "Arabic"], // optional: Leave the array empty if you don't want to display languages
+  locale: "id", // BCP 47 language tag for the HTML lang attribute, e.g., 'en', 'ja', 'zh-TW'
 };
 
 const newsletter: Newsletter = {
-  display: false,
+  display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>Cerita seputar UI/UX, Creative Multimedia, dan pengembangan software & IoT.</>,
+  description: <>Cerita seputar UI/UX, Creative Multimedia, dan pengembangan software & IoT</>,
 };
 
 const social: Social = [
+  // Links are automatically displayed.
+  // Import new icons in /once-ui/icons.ts
+  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
@@ -29,14 +32,26 @@ const social: Social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/mhafidzhpribadi",
+    link: "https://www.linkedin.com/in/muhammad-hafidzh-pribadi",
     essential: true,
   },
   {
     name: "WhatsApp",
     icon: "whatsapp",
-    link: "https://wa.me/6282276537750",
+    link: "https://wa.me/6282276033160",
     essential: true,
+  },
+  {
+    name: "Instagram",
+    icon: "instagram",
+    link: "https://instagram.com/mhmhafidzz",
+    essential: false,
+  },
+  {
+    name: "TikTok",
+    icon: "tiktok",
+    link: "https://tiktok.com/@poddskie",
+    essential: false,
   },
   {
     name: "Email",
@@ -46,31 +61,41 @@ const social: Social = [
   },
 ];
 
-const home = {
+const home: Home = {
   path: "/",
+  image: "/images/og/home.jpg",
   label: "Home",
-  title: `${person.name} – Portofolio`,
-  description: "Portofolio profesional Muhammad Hafidzh Pribadi",
+  title: `${person.name}'s Portfolio`,
+  description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Crafting Intuitive UI/UX, Creative Multimedia, and Scalable Tech Solutions</>,
+  featured: {
+    display: true,
+    title: (
+      <Row gap="12" vertical="center">
+        <strong className="ml-4">Innovillage 2025</strong>{" "}
+        <Line background="brand-alpha-strong" vert height="20" />
+        <Text marginRight="4" onBackground="brand-medium">
+          Top 180 Innovation
+        </Text>
+      </Row>
+    ),
+    href: "/work",
+  },
   subline: (
     <>
-      Fresh Graduate S1 Teknik Komputer Universitas Syiah Kuala dengan fokus pada UI/UX Design,
-      Creative Multimedia (Blender & Unity AR), serta Software & IoT Development.
+      Fresh Graduate S1 Teknik Komputer Universitas Syiah Kuala dengan fokus pada{" "}
+      <Text as="span" size="xl" weight="strong">UI/UX Design</Text>, Creative Multimedia
+      (Blender & Unity AR), serta <br /> Software & IoT Development.
     </>
   ),
-  image: "/images/avatar.jpg",
-  featured: {
-    display: false,
-    title: "Featured Projects",
-    description: "Selected projects showcase",
-  },
-} as any as Home;
+};
 
 const about: About = {
+  path: "/about",
   label: "About",
-  title: "About me",
-  description: `Profil dan latar belakang profesional ${person.name}`,
-  tableOfContents: {
+  title: `About – ${person.name}`,
+  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  tableOfContent: {
     display: true,
     subItems: false,
   },
@@ -79,7 +104,7 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://wa.me/6282276033160",
   },
   intro: {
     display: true,
@@ -92,11 +117,24 @@ const about: About = {
         merancang antarmuka produk digital di Figma, membuat model 3D dengan Blender, serta
         mengembangkan aplikasi interaktif dan Augmented Reality (AR) menggunakan Unity Engine.
         Terbiasa mengimplementasikan logika program melalui proyek berbasis Python dan C#.
+        <br />
+        <br />
+        Selain keahlian teknis, berbagai pengalaman selama masa studi membekali saya dengan
+        kemampuan analitis, pemecahan masalah (problem solving), serta komunikasi interpersonal
+        yang kuat. Pengalaman kepemimpinan dan manajemen tim terasah melalui peran sebagai Ketua
+        Panitia PBMT 2024 (KKN Tematik untuk implementasi ilmu teknik langsung ke masyarakat desa
+        binaan), Kepala Divisi Humas Himpunan, serta Kepala Divisi Sponsorship & Partnership.
+        Pengalaman akademik saya diperkuat melalui partisipasi dalam program MBKM Kampus Merdeka
+        2024 dan Dicoding Academy, kepemilikan Sertifikasi Kompetensi BNSP IoT Device Engineering,
+        serta pencapaian Top 180 Innovillage 2025. Cepat beradaptasi dengan teknologi baru,
+        bertanggung jawab, dan berkomitmen memberikan kontribusi positif dalam menghadirkan
+        solusi digital yang inovatif, fungsional, dan bernilai guna, serta memiliki keinginan
+        kuat untuk terus belajar.
       </>
     ),
   },
   work: {
-    display: true,
+    display: true, // set to false to hide this section
     title: "Work & Organizational Experience",
     experiences: [
       {
@@ -130,7 +168,20 @@ const about: About = {
             />
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/experience/pbmt-2024-1.jpg",
+            alt: "Koordinasi panitia PBMT 2024 di lapangan",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/experience/pbmt-2024-2.jpg",
+            alt: "Kegiatan implementasi program PBMT 2024 di desa binaan",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Himpunan Mahasiswa Teknik Komputer",
@@ -158,7 +209,14 @@ const about: About = {
             />
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/experience/hmtk-humas-1.jpg",
+            alt: "Kegiatan publikasi dan branding Divisi Humas HMTK",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Annual Event Himpunan",
@@ -186,12 +244,19 @@ const about: About = {
             />
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/experience/annual-event-sponsorship-1.jpg",
+            alt: "Negosiasi dan kerja sama sponsorship Annual Event Himpunan",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
   studies: {
-    display: true,
+    display: true, // set to false to hide this section
     title: "Studies",
     institutions: [
       {
@@ -211,11 +276,12 @@ const about: About = {
         ),
       },
       {
-        name: "SMA",
+        name: "Nama SMA/SMK Kamu",
         description: (
           <>
             <p>
-              MIPA (Matematika dan Ilmu Pengetahuan Alam).
+              Jurusan (mis. IPA/IPS/RPL), tahun masuk – tahun lulus. Tambahkan ringkasan singkat
+              minat atau prestasi selama masa sekolah di sini.
             </p>
             <img
               src="/images/sma.jpg"
@@ -236,7 +302,7 @@ const about: About = {
     ],
   },
   technical: {
-    display: true,
+    display: true, // set to false to hide this section
     title: "Technical skills",
     skills: [
       {
@@ -244,70 +310,127 @@ const about: About = {
         description: (
           <>
             Merancang antarmuka produk digital di Figma, membuat model 3D dengan Blender, serta
-            mengembangkan aplikasi interaktif dan Augmented Reality (AR) menggunakan Unity Engine.
+            mengembangkan aplikasi interaktif dan Augmented Reality (AR) menggunakan Unity Engine
+            dan Vuforia.
           </>
         ),
         tags: [
           { name: "Figma", icon: "figma" },
-          { name: "Blender", icon: "cube" },
-          { name: "Unity Engine", icon: "code" },
-          { name: "Augmented Reality", icon: "grid" },
+          { name: "Blender", icon: "blender" },
+          { name: "Unity Engine", icon: "unity" },
+          { name: "Augmented Reality (AR/Vuforia)", icon: "vuforia" },
+          { name: "Wireframing", icon: "grid" },
+          { name: "Prototyping", icon: "layout" },
         ],
+        images: [],
       },
       {
         title: "Programming & Web",
         description: (
           <>
-            Mengimplementasikan logika program melalui proyek berbasis Python dan C#, serta
-            membangun antarmuka web yang terstruktur dan responsif.
+            Mengimplementasikan logika program melalui proyek berbasis Python dan C#, serta dasar
+            pengembangan web dengan HTML.
           </>
         ),
         tags: [
-          { name: "Python", icon: "code" },
-          { name: "C#", icon: "code" },
-          { name: "HTML5", icon: "globe" },
-          { name: "CSS3", icon: "globe" },
-          { name: "JavaScript", icon: "code" },
+          { name: "Python", icon: "python" },
+          { name: "C#", icon: "csharp" },
+          { name: "HTML", icon: "html5" },
         ],
+        images: [],
       },
       {
-        title: "IoT & Hardware Integration",
+        title: "IoT & Embedded Systems",
         description: (
           <>
-            Membangun sistem tertanam dan otomasi perangkat keras berbasis mikrokontroler untuk
-            solusi monitoring dan kendali cerdas.
+            Mengembangkan sistem monitoring berbasis mikrokontroler dan cloud database, dengan
+            Sertifikasi Kompetensi BNSP IoT Device Engineering.
           </>
         ),
         tags: [
           { name: "ESP32", icon: "cpu" },
-          { name: "Arduino", icon: "code" },
-          { name: "Sensors Integration", icon: "refresh" },
-          { name: "IoT Automation", icon: "globe" },
+          { name: "Arduino", icon: "arduino" },
+          { name: "Firebase", icon: "firebase" },
+          { name: "BNSP Certified IoT Device Engineering", icon: "certificate" },
         ],
+        images: [],
       },
     ],
   },
 };
 
 const blog: Blog = {
+  path: "/blog",
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
+  display: false, // hidden from navigation for now — enable when posts are ready
+  // Create new blog posts by adding a new .mdx file to app/blog/posts
+  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
+  path: "/work",
   label: "Work",
-  title: "My projects",
+  title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
+  // Create new project pages by adding a new .mdx file to app/blog/posts
+  // All projects will be listed on the /home and /work routes
+  //
+  // Proyek unggulan yang perlu dibuatkan sebagai file .mdx di app/work/projects:
+  // 1. Interactive AR Learning Application – Aplikasi edukasi berbasis Augmented Reality
+  //    menggunakan Unity Engine dan Vuforia dengan objek 3D interaktif untuk siswa SMK.
+  // 2. IoT Real-Time Monitoring System – Sistem monitoring perangkat pintar berbasis
+  //    mikrokontroler ESP32 dan database Firebase.
+  // 3. Innovillage Top 180 Innovation Project – Pengembangan solusi inovasi teknologi
+  //    terapan untuk menjawab kebutuhan masyarakat desa.
 };
 
 const gallery: Gallery = {
+  path: "/gallery",
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
+  display: false, // hidden from navigation until real photos are added
+  // Replace with your own gallery images once available
   images: [
     {
-      src: "/images/gallery/img-01.jpg",
+      src: "/images/gallery/horizontal-1.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-4.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-3.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-1.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/vertical-2.jpg",
+      alt: "image",
+      orientation: "vertical",
+    },
+    {
+      src: "/images/gallery/horizontal-2.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/horizontal-4.jpg",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/gallery/vertical-3.jpg",
       alt: "image",
       orientation: "vertical",
     },

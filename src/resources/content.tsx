@@ -135,48 +135,123 @@ const about: About = {
   },
   work: {
     display: true, // set to false to hide this section
-    title: "Work Experience",
+    title: "Work & Organizational Experience",
     experiences: [
       {
         company: "Pekan Bakti Mahasiswa Teknik (PBMT) 2024",
         timeframe: "2024",
-        role: "Project Leader (Ketua Panitia)",
+        role: "[PBMT 2024] Project Leader (Ketua Panitia)",
         achievements: [
           <>
             Memimpin dan mengoordinasikan program KKN Tematik pengabdian masyarakat tahunan
             Fakultas Teknik USK di desa binaan, berkolaborasi dengan puluhan dosen pengabdi dan
-            mahasiswa.
+            mahasiswa lintas jurusan.
           </>,
           <>
-            Mengelola manajemen tim, logistik, perizinan lintas instansi daerah, dan komunikasi
-            antardivisi.
+            Menyusun dan mengeksekusi timeline kegiatan dari perencanaan hingga pelaksanaan,
+            memastikan seluruh program kerja divisi berjalan sesuai target waktu.
+          </>,
+          <>
+            Mengelola perizinan lintas instansi daerah (kecamatan, desa, dan pemangku kepentingan
+            setempat) serta mengoordinasikan logistik untuk seluruh rangkaian kegiatan.
+          </>,
+          <>
+            Memimpin rapat koordinasi rutin antardivisi dan menjadi jembatan komunikasi utama
+            antara panitia, dosen pembimbing, dan aparat desa binaan.
+          </>,
+          <>
+            <p style={{ margin: 0 }}>Dokumentasi kegiatan lapangan:</p>
+            <img
+              src="/images/experience/pbmt-2024-1.jpg"
+              alt="Dokumentasi kegiatan PBMT 2024 di desa binaan"
+              style={{ width: "100%", maxWidth: 480, borderRadius: 8, marginTop: 8 }}
+            />
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/experience/pbmt-2024-1.jpg",
+            alt: "Koordinasi panitia PBMT 2024 di lapangan",
+            width: 16,
+            height: 9,
+          },
+          {
+            src: "/images/experience/pbmt-2024-2.jpg",
+            alt: "Kegiatan implementasi program PBMT 2024 di desa binaan",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Himpunan Mahasiswa Teknik Komputer",
         timeframe: "2023 - 2024",
-        role: "Head of Public Relations (Ketua Divisi Humas)",
+        role: "[HMTK] Head of Public Relations (Ketua Divisi Humas)",
         achievements: [
           <>
-            Memimpin strategi komunikasi internal-eksternal, branding organisasi, serta relasi
-            kelembagaan kampus.
+            Merancang dan menjalankan strategi komunikasi internal-eksternal himpunan, termasuk
+            publikasi kegiatan dan pengelolaan media sosial organisasi.
+          </>,
+          <>
+            Membangun dan menjaga branding organisasi agar konsisten di seluruh materi publikasi
+            dan kanal komunikasi resmi himpunan.
+          </>,
+          <>
+            Menjalin dan merawat relasi kelembagaan dengan pihak kampus, himpunan mahasiswa lain,
+            serta mitra eksternal untuk mendukung kegiatan organisasi.
+          </>,
+          <>
+            <p style={{ margin: 0 }}>Dokumentasi kegiatan divisi:</p>
+            <img
+              src="/images/experience/hmtk-humas-1.jpg"
+              alt="Dokumentasi kegiatan Divisi Humas HMTK"
+              style={{ width: "100%", maxWidth: 480, borderRadius: 8, marginTop: 8 }}
+            />
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/experience/hmtk-humas-1.jpg",
+            alt: "Kegiatan publikasi dan branding Divisi Humas HMTK",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
       {
         company: "Annual Event Himpunan",
         timeframe: "2022 - 2023",
-        role: "Head of Sponsorship & Partnership",
+        role: "[Annual Event] Head of Sponsorship & Partnership",
         achievements: [
           <>
-            Memimpin negosiasi dan kerja sama pendanaan strategis dengan mitra instansi dan
-            perusahaan eksternal.
+            Memimpin tim untuk mengidentifikasi, menghubungi, dan bernegosiasi dengan calon mitra
+            instansi dan perusahaan eksternal guna mendukung pendanaan acara tahunan.
+          </>,
+          <>
+            Menyusun proposal kerja sama dan paket sponsorship yang disesuaikan dengan kebutuhan
+            masing-masing mitra.
+          </>,
+          <>
+            Mengelola hubungan pasca-kerja sama dengan sponsor, termasuk pemenuhan kewajiban
+            eksposur brand sesuai kesepakatan.
+          </>,
+          <>
+            <p style={{ margin: 0 }}>Dokumentasi kegiatan sponsorship:</p>
+            <img
+              src="/images/experience/annual-event-sponsorship-1.jpg"
+              alt="Dokumentasi kegiatan Sponsorship & Partnership Annual Event"
+              style={{ width: "100%", maxWidth: 480, borderRadius: 8, marginTop: 8 }}
+            />
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/experience/annual-event-sponsorship-1.jpg",
+            alt: "Negosiasi dan kerja sama sponsorship Annual Event Himpunan",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
@@ -186,15 +261,43 @@ const about: About = {
     institutions: [
       {
         name: "Universitas Syiah Kuala",
-        description: <>S1 Teknik Komputer, IPK 3,34.</>,
+        description: (
+          <>
+            <p>
+              S1 Teknik Komputer, IPK 3,34. Fokus pada UI/UX Design, Internet of Things (IoT),
+              Creative Multimedia, dan Software Development.
+            </p>
+            <img
+              src="/images/kampus-usk.jpg"
+              alt="Universitas Syiah Kuala"
+              style={{ width: "100%", maxWidth: 480, borderRadius: 8, marginTop: 8 }}
+            />
+          </>
+        ),
+      },
+      {
+        name: "Nama SMA/SMK Kamu",
+        description: (
+          <>
+            <p>
+              Jurusan (mis. IPA/IPS/RPL), tahun masuk – tahun lulus. Tambahkan ringkasan singkat
+              minat atau prestasi selama masa sekolah di sini.
+            </p>
+            <img
+              src="/images/sma.jpg"
+              alt="Sekolah Menengah Atas"
+              style={{ width: "100%", maxWidth: 480, borderRadius: 8, marginTop: 8 }}
+            />
+          </>
+        ),
       },
       {
         name: "MBKM Kampus Merdeka",
-        description: <>Program Pembelajaran Mandiri & Implementasi Lapangan, 2024.</>,
+        description: <p>Program Pembelajaran Mandiri & Implementasi Lapangan, 2024.</p>,
       },
       {
         name: "Dicoding Academy",
-        description: <>Pelatihan Pengembangan Teknologi & Perangkat Lunak.</>,
+        description: <p>Pelatihan Pengembangan Teknologi & Perangkat Lunak.</p>,
       },
     ],
   },
@@ -261,6 +364,7 @@ const blog: Blog = {
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
+  display: false, // hidden from navigation for now — enable when posts are ready
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -287,6 +391,7 @@ const gallery: Gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
+  display: false, // hidden from navigation until real photos are added
   // Replace with your own gallery images once available
   images: [
     {

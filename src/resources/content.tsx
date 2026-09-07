@@ -58,6 +58,11 @@ const home: Home = {
     </>
   ),
   image: "/images/avatar.jpg",
+  featured: {
+    display: false,
+    title: "Featured Projects",
+    description: "Selected projects showcase",
+  },
 };
 
 const about: About = {
